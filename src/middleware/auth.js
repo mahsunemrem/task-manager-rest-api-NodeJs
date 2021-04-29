@@ -8,7 +8,7 @@ const auth = async (req, res, next) => {
         if(!token){
             console.log('token is null')
         }
-        const decoded = jwt.verify(token, 'thisismynewcourse')
+        const decoded = jwt.verify(token, process.env.JWT_SCRET)
         const user = await User.findOne({_id: decoded._id, 'tokens.token' : token})
        
         if(!user){
