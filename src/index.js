@@ -33,6 +33,7 @@ app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
 
+console.log('test')
 app.listen(port,() => {
     console.log('Server is up on port'+ port)
 })
